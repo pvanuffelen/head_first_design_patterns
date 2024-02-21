@@ -1,6 +1,6 @@
-from abc import ABCmeta, abstractmethod
+from abc import ABCMeta, abstractmethod
 
-class FlyBehavior(metaclass=ABCmeta):
+class FlyBehavior(metaclass=ABCMeta):
     """Class that mimics the interface that all flying behavior classes implement"""
     @abstractmethod
     def fly(self):
