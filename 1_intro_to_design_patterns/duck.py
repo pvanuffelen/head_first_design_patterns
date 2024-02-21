@@ -1,5 +1,5 @@
 from abc import abstractmethod
-
+from flybehavior import FlyBehavior
 
 class Duck:
 
