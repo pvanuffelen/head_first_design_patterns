@@ -12,13 +12,17 @@ class FlyBehavior(metaclass=ABCMeta):
 
 class FlyWithWings(FlyBehavior):
     """Flying behavior implementation for ducks that DO fly"""
-
     def fly(self):
         print("I'm flying")
 
 
-class FlyNoWa(FlyBehavior):
+class FlyNoWay(FlyBehavior):
     """Flying behavior implementation for ducks that do NOT fly"""
-
     def fly(self):
         print("I can't fly")
+
+
+class FlyRocketPowered(FlyBehavior):
+    """Flying behavior of rocket powered"""
+    def fly(self):
+        print("I'm flying with a rocket!")
