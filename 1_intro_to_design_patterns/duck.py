@@ -1,7 +1,7 @@
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 
 
-class Duck(ABC):
+class Duck:
 
     def __init__(self):
         self.fly_behavior = FlyBehavior()
