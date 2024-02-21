@@ -1,6 +1,6 @@
 from abc import abstractmethod
-from flybehavior import FlyBehavior
-from quackbehavior import QuackBehavior
+from fly_behavior import FlyBehavior
+from quack_behavior import QuackBehavior
 
 class Duck:
 
