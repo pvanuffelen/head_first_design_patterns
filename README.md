@@ -26,18 +26,11 @@ You can find the code of the duck simulator in the `1_intro_to_design_patterns` 
 
 ### What did I learn
 
-- Create
-- a
-- list
-- of
-- stuff
-- that
-- you've
-- learned
+- If you want to communicate (efficiently) with other designers, you should know the lingo aka know design patterns.
+- I've learned about the Strategic Pattern (implement a 'behavior')
 
 ## 2. The Observer Pattern
 
 What are you doing?! You aren't even done with chapter 1 yet...
 
 Please finish this first before you continue.
-
