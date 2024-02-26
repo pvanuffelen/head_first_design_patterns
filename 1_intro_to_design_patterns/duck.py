@@ -11,7 +11,7 @@ class Duck:
 
     @abstractmethod
     def display(self):
-        """Abstract method to display duck (abstract=all subclasses must have display() method)"""
+        """Abstract method to display duck (abstract=doesn't have a body, each subclass must implement by itself)"""
         pass
 
     def perform_fly(self):
