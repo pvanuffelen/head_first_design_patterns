@@ -3,7 +3,6 @@ from abc import ABCMeta, abstractmethod
 
 class FlyBehavior(metaclass=ABCMeta):
     """Class that mimics the interface that all flying behavior classes implement"""
-
     @abstractmethod
     def fly(self):
         """Fly method to be overridden by subclass"""
@@ -23,6 +22,6 @@ class FlyNoWay(FlyBehavior):
 
 
 class FlyRocketPowered(FlyBehavior):
-    """Flying behavior of rocket powered"""
+    """Flying behavior implementation for ducks that do ROCKET POWERED"""
     def fly(self):
         print("I'm flying with a rocket!")
