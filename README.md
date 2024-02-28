@@ -74,6 +74,11 @@ You can find the code of the duck simulator in the `1_intro_to_design_patterns` 
 
 ## 2. The Observer Pattern
 
-What are you doing?! You aren't even done with chapter 1 yet...
+Some quotes form chapter 2:
 
-Please finish this first before you continue.
+- "If you understand newspaper subscriptions, you pretty much understand the Observer Pattern, only we call the publisher the SUBJECT and the subscribers the OBSERVERS.
+- "__The Observer Pattern__ defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically."
+- Loose coupling is not knowing that much about another class, which makes you less dependent on that class (minimize interdependency).
+- "Design Principle: Strive for loosely coupled designs between objects that interact."
+- 
+
