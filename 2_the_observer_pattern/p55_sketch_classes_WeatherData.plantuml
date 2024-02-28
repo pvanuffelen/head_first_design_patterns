@@ -26,36 +26,45 @@ getPressure()
 measurementsChanged()
 }
 
-class DisplayCurrentConditions {
+class CurrentConditionsDisplay {
 display()
 update()
 }
 
-class DisplayWeatherStats {
+class StatisticsDisplay {
 display()
 update()
 }
 
-class DisplayForcast {
+class ForecastDisplay {
 display()
 update()
 }
 
-class DisplayAddOns {
+class AddOnDisplay {
 display()
 update()
 }
 
-WeatherData ..> Subject :implements
+'implementation arrows
+WeatherData ..> Subject
 
-DisplayCurrentConditions ..> Observer
-DisplayWeatherStats ..> Observer
-DisplayForcast ..> Observer
-DisplayAddOns ..> Observer
+CurrentConditionsDisplay ..> Observer
+StatisticsDisplay ..> Observer
+ForecastDisplay ..> Observer
+AddOnDisplay ..> Observer
 
-DisplayCurrentConditions ..> DisplayElement
-DisplayWeatherStats ..> DisplayElement
-DisplayForcast ..> DisplayElement
-DisplayAddOns ..> DisplayElement
+CurrentConditionsDisplay ..> DisplayElement
+StatisticsDisplay ..> DisplayElement
+ForecastDisplay ..> DisplayElement
+AddOnDisplay ..> DisplayElement
 
+'observer arrows
+Subject --> Observer :observes
+
+'subject arrows
+CurrentConditionsDisplay ---> WeatherData :subject
+StatisticsDisplay ---> WeatherData :subject
+ForecastDisplay ---> WeatherData :subject
+AddOnDisplay ---> WeatherData :subject
 @enduml
