@@ -6,11 +6,12 @@ from typing import List
 
 class WeatherData(Subject):
     """The weather data class, which implements the Subject interface"""
+
     def __init__(self):
-        self.observers: List[Observer] = [],
-        self.temperature: float = None,
-        self.humidity: float = None,
-        self.pressure: float = None
+        self.observers: List[Observer] = []
+        self.temperature: float
+        self.humidity: float
+        self.pressure: float
 
     def register_observer(self, observer: Observer):
         """Method that implements the register_observer method, by adding an observer to the list of observers"""
@@ -24,7 +25,7 @@ class WeatherData(Subject):
         """Method that implements the notify_observers method, tells all the observer about the state
            Because they are all Observers, we know they all implement update(), so we know how to notify them"""
         for observer in self.observers:
-            observer.update(temperature=self.temperature, humidity=self.humidity, pressure=self.pressure)
+            observer.update(self.temperature, self.humidity, self.pressure)
 
     def measurements_changed(self):
         """Notify the observers when we get updated measurements from the Weather Station"""
@@ -36,3 +37,5 @@ class WeatherData(Subject):
         self.humidity = humidity
         self.pressure = pressure
         self.measurements_changed()
+
+    # other WeatherData methods here

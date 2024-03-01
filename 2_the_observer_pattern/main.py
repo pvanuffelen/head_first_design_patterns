@@ -1,8 +1,7 @@
-
-
+from weather_station import WeatherStation
 
 def main():
-    print("Test")
+    WeatherStation()
 
 
 if __name__ == '__main()__':
