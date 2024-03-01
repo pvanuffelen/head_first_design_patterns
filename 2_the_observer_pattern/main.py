@@ -1,5 +1,6 @@
 from weather_station import WeatherStation
 
+
 def main():
     WeatherStation()
 

@@ -1,4 +1,3 @@
-from abc import ABCMeta, abstractmethod
 from subject import Subject
 from observer import Observer
 from typing import List
@@ -9,9 +8,9 @@ class WeatherData(Subject):
 
     def __init__(self):
         self.observers: List[Observer] = []
-        self.temperature: float
-        self.humidity: float
-        self.pressure: float
+        self.temperature: float = 0
+        self.humidity: float = 0
+        self.pressure: float = 0
 
     def register_observer(self, observer: Observer):
         """Method that implements the register_observer method, by adding an observer to the list of observers"""
