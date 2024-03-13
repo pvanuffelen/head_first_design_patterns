@@ -13,12 +13,12 @@ In the section below, I describe these concepts using my own words.
 ### Abstraction
 
 Abstraction (in Java) is the act of using classes, objects and methods to do all the 'heavy-lifting' for you.
-You use these object etc. in your code.
-Instead of having to understand all the code, you only need to know how to use the objects etc.
+You use these objects etc. in your code.
+Instead of having to understand all the code, you only need to know how to use the objects.
 Much like you don't need to know exactly how an engine works, in order to drive a car.
 
-In Java, there are two ways implementing abstraction.
-Through __abstract classes__ and through __interfaces__.
+> In Java, there are two ways implementing abstraction.
+> Through __abstract classes__ and through __interfaces__.
 
 An abstract class, is a class that cannot be instanced, but only be extended on by subclasses.
 The abstract class can have both __abstract methods__ as __non-abstract methods__.
@@ -48,8 +48,7 @@ Where a subclass can inherit from multiple parent-classes and can override or ov
 
 ## 1. Intro to Design Patterns
 
-In this chapter, I was introduced to my first design pattern.
-And why one wants to use design patterns.
+In this chapter, I was introduced to my first design pattern (strategic) and why you want to use design patterns.
 
 - You spend way more time in the code after the application is live
 - Scalability
@@ -57,7 +56,10 @@ And why one wants to use design patterns.
 The main example of this chapter is about a duck simulator.
 The designer is asked to make ducks fly and implements this in the `Duck` class.
 However, this also made all the rubber ducks fly around.
-To combat this, he created 'Duck Behavior' interfaces.
+To combat this, he created 'Duck Behavior' interfaces (e.g. quackBehaviour).
+
+Each duck class should implement these behaviours.
+This allows for more flexibility and gives you an overview of what each class can do.
 This Design Pattern in called the **Strategic Design Pattern**.
 
 > In java, you can create interfaces. 
@@ -66,13 +68,16 @@ This Design Pattern in called the **Strategic Design Pattern**.
 
 You can find the code of the duck simulator in the `1_intro_to_design_patterns` folder.
 
-### What did I learn
+### Takeaways
 
 - If you want to communicate (efficiently) with other designers, design patterns give you a __shared vocabulary__
 - 
 - I've learned about the Strategic Pattern (implement a 'behavior')
 
 ## 2. The Observer Pattern
+
+The Observer Patterns works similar to newspaper subscriptions.
+A subscriber is called an OBSERVER and the publisher is the SUBJECT.
 
 Some quotes form chapter 2:
 
@@ -82,3 +87,7 @@ Some quotes form chapter 2:
 - "Design Principle: Strive for loosely coupled designs between objects that interact."
 - 
 
+### Takeaways
+
+- Observer pattern works because all OBSERVERS implement the `Observer` interface, which makes them implement the `update()` method. 
+- Loose coupling: refers to not knowing everything about another object (minimize interdependency).
