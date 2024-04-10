@@ -24,7 +24,7 @@ class WeatherData(Subject):
         """Method that implements the notify_observers method, tells all the observer about the state
            Because they are all Observers, we know they all implement update(), so we know how to notify them"""
         for observer in self.observers:
-            observer.update(self.temperature, self.humidity, self.pressure)
+            observer.update()
 
     def measurements_changed(self):
         """Notify the observers when we get updated measurements from the Weather Station"""
@@ -36,5 +36,14 @@ class WeatherData(Subject):
         self.humidity = humidity
         self.pressure = pressure
         self.measurements_changed()
+
+    def get_temperature(self) -> float:
+        return self.temperature
+
+    def get_humidity(self) -> float:
+        return self.humidity
+
+    def get_pressure(self) -> float:
+        return self.pressure
 
     # other WeatherData methods here

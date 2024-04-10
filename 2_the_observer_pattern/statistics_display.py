@@ -14,10 +14,10 @@ class StatisticsDisplay(Observer, DisplayElement):
         self.pressure: float = 0  # psi
         self.historic_temperature: List[float] = []
 
-    def update(self, temperature: float, humidity: float, pressure: float):
-        self.temperature = temperature
-        self.humidity = humidity
-        self.historic_temperature.append(temperature)
+    def update(self):
+        self.temperature = self.weather_data.get_temperature()
+        self.humidity = self.weather_data.get_humidity()
+        self.historic_temperature.append(self.temperature)
         self.display()
 
     def display(self):
