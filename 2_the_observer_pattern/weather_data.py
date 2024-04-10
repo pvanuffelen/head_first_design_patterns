@@ -8,9 +8,9 @@ class WeatherData(Subject):
 
     def __init__(self):
         self.observers: List[Observer] = []
-        self.temperature: float = 0
-        self.humidity: float = 0
-        self.pressure: float = 0
+        self.temperature: float = 0  # degrees fahrenheit
+        self.humidity: float = 0  # percentage
+        self.pressure: float = 0  # psi
 
     def register_observer(self, observer: Observer):
         """Method that implements the register_observer method, by adding an observer to the list of observers"""
