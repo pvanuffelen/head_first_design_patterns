@@ -79,13 +79,15 @@ You can find the code of the duck simulator in the `1_intro_to_design_patterns` 
 The Observer Patterns works similar to newspaper subscriptions.
 A subscriber is called an OBSERVER and the publisher is the SUBJECT.
 
-Some quotes form chapter 2:
+The Subject doesn't need to know anything about the Observer, just that it implements the `Observer()` interface (and thus the `update()` method).
+This loose-coupling allows the Subject to _push_ notifications to all the Observers, without knowing much about the other objects.
 
-- "If you understand newspaper subscriptions, you pretty much understand the Observer Pattern, only we call the publisher the SUBJECT and the subscribers the OBSERVERS.
-- "__The Observer Pattern__ defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically."
-- Loose coupling is not knowing that much about another class, which makes you less dependent on that class (minimize interdependency).
-- "Design Principle: Strive for loosely coupled designs between objects that interact."
--
+### _push_ vs _pull_
+
+We can also make the Observers _pull_ the information they need.
+This makes it easier to add measurements to the `WeatherStation` class.
+When pushing, we would have to refactor all the `update()` methods.
+If the Observer retrieve the data they want themselves, we don't need to do that refactoring.
 
 ### Takeaways
 
