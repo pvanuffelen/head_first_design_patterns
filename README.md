@@ -62,8 +62,8 @@ Each duck class should implement these behaviours.
 This allows for more flexibility and gives you an overview of what each class can do.
 This Design Pattern in called the **Strategic Design Pattern**.
 
-> In java, you can create interfaces. 
-> In python this is not really a thing. 
+> In java, you can create interfaces.
+> In python this is not really a thing.
 > You can make your class behave as such by using the `ABCMeta` and `@abstractclass` packages
 
 You can find the code of the duck simulator in the `1_intro_to_design_patterns` folder.
@@ -71,7 +71,7 @@ You can find the code of the duck simulator in the `1_intro_to_design_patterns` 
 ### Takeaways
 
 - If you want to communicate (efficiently) with other designers, design patterns give you a __shared vocabulary__
-- 
+-
 - I've learned about the Strategic Pattern (implement a 'behavior')
 
 ## 2. The Observer Pattern
@@ -85,9 +85,9 @@ Some quotes form chapter 2:
 - "__The Observer Pattern__ defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically."
 - Loose coupling is not knowing that much about another class, which makes you less dependent on that class (minimize interdependency).
 - "Design Principle: Strive for loosely coupled designs between objects that interact."
-- 
+-
 
 ### Takeaways
 
-- Observer pattern works because all OBSERVERS implement the `Observer` interface, which makes them implement the `update()` method. 
+- Observer pattern works because all OBSERVERS implement the `Observer` interface, which makes them implement the `update()` method.
 - Loose coupling: refers to not knowing everything about another object (minimize interdependency).
