@@ -76,18 +76,25 @@ You can find the code of the duck simulator in the `1_intro_to_design_patterns` 
 
 ## 2. The Observer Pattern
 
-The Observer Patterns works similar to newspaper subscriptions.
-A subscriber is called an OBSERVER and the publisher is the SUBJECT.
+The Observer Patterns defines a one-to-many relationship between objects.
+In this pattern, Observers listen to a Subject, the latter published new information regularly.
 
-The Subject doesn't need to know anything about the Observer, just that it implements the `Observer()` interface (and thus the `update()` method).
-This loose-coupling allows the Subject to _push_ notifications to all the Observers, without knowing much about the other objects.
+In the first implementation we used the _push_ strategy.
+This way, the Subject doesn't need to know anything about the Observer, just that it implements the `Observer()` interface (and thus the `update()` method).
+This is an example of loose-coupling, which allows the Subject to _push_ notifications to all the Observers when values have changed.
+The Subject doens't need to know anything about the other objects (Observers).
 
 ### _push_ vs _pull_
 
 We can also make the Observers _pull_ the information they need.
-This makes it easier to add measurements to the `WeatherStation` class.
-When pushing, we would have to refactor all the `update()` methods.
-If the Observer retrieve the data they want themselves, we don't need to do that refactoring.
+This makes it easier to add measurements to the `WeatherStation` class and the Display classes do NOT have to receive the measurements they're not interested in.
+Otherwise we would have to refactor all the `update()` methods of the Displays.
+
+When implementing the push strategy, we use Getters to receive all the measurements.
+So we created Getters in the WeatherData class.
+We can remove all the input parameters/measurements from the `update()` method.
+And make all the displays 'get' their own desired parameters when using `update()`
+The `notify_obersevers()` method now also no longer needs any input measurements and just notifies (loops over) the Observers, so they can execute their own update method.
 
 ### Takeaways
 
