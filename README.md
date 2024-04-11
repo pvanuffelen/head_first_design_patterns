@@ -96,7 +96,24 @@ We can remove all the input parameters/measurements from the `update()` method.
 And make all the displays 'get' their own desired parameters when using `update()`
 The `notify_obersevers()` method now also no longer needs any input measurements and just notifies (loops over) the Observers, so they can execute their own update method.
 
-### Takeaways
+### Design Principle Challenge
 
-- Observer pattern works because all OBSERVERS implement the `Observer` interface, which makes them implement the `update()` method.
-- Loose coupling: refers to not knowing everything about another object (minimize interdependency).
+*Identify the aspects of your application that vary and separate them from what stays the same.*
+
+The aspects that vary in this example are the amount of Obersers and the measurements of the Weather Station (Subject).
+With this Design Pattern, you can vary all of these without much effort.
+OG ANSWER: The Observer Pattern separates the Subject and the Observers.
+This loose-coupling allows for many different types Observers to listen to the Subject, without the Subject changing.
+
+*Program to an Interface, not an implementation*
+
+Both the Subject and the Observers use an interface.
+The Subject uses it to keep track of the objects implementing the Observer interface and the Observers use it to register and get notified.
+OG ANSWER: The Observers in this pattern implement the Observer interface.
+...
+
+*Favor composition over inheritance*
+
+The Observer Pattern uses composition to compose any number of Observers with their Subject.
+These relationships aren't set up by some kind of inheritance hierarchy
+OG ANSWER:The Observer Pattern favors composition over inheritance since it separates the Subject and Observers from each-other.
