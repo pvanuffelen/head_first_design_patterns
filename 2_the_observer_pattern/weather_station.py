@@ -4,6 +4,7 @@ from statistics_display import StatisticsDisplay
 from forecast_display import ForecastDisplay
 from heat_index_display import HeatIndexDisplay
 
+
 class WeatherStation:
     weather_data = WeatherData()
     current_conditions_display = CurrentConditionsDisplay(weather_data)
