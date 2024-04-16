@@ -107,13 +107,13 @@ In this pattern, Observers listen to a Subject, the latter published new informa
 In the first implementation we used the _push_ strategy.
 This way, the Subject doesn't need to know anything about the Observer, just that it implements the `Observer()` interface (and thus the `update()` method).
 This is an example of loose-coupling, which allows the Subject to _push_ notifications to all the Observers when values have changed.
-The Subject doens't need to know anything about the other objects (Observers).
+The Subject doesn't need to know anything about the other objects (Observers).
 
 ### _push_ vs _pull_
 
 We can also make the Observers _pull_ the information they need.
 This makes it easier to add measurements to the `WeatherStation` class and the Display classes do NOT have to receive the measurements they're not interested in.
-Otherwise we would have to refactor all the `update()` methods of the Displays.
+Otherwise, we would have to refactor all the `update()` methods of the Displays.
 
 When implementing the push strategy, we use Getters to receive all the measurements.
 So we created Getters in the WeatherData class.
@@ -129,7 +129,7 @@ The `notify_obersevers()` method now also no longer needs any input measurements
 
 *Identify the aspects of your application that vary and separate them from what stays the same.*
 
-The aspects that vary in this example are the amount of Obersers and the measurements of the Weather Station (Subject).
+The aspects that vary in this example are the amount of Observers and the measurements of the Weather Station (Subject).
 With this Design Pattern, you can vary all of these without much effort.
 OG ANSWER: The Observer Pattern separates the Subject and the Observers.
 This loose-coupling allows for many different types Observers to listen to the Subject, without the Subject changing.
@@ -151,7 +151,7 @@ OG ANSWER:The Observer Pattern favors composition over inheritance since it sepa
 
 The main example of this chapter is StarBuzz Coffee and their beverages.
 Trying to let them all inherit form the `Beverage` Class led to "class explosion".
-Adding the toppings to the Parent Class also didn't seems to work out great...
+Adding the toppings to the Parent Class also didn't seem to work out great...
 
 A new Design Principle appeared!
 
