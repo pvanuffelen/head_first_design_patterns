@@ -184,3 +184,31 @@ Those will be discussed later-on in the book.
 A *downside* of the Decorator Patterns is that it results in a large number of small classes.
 This can be overwhelming.
 Example the Java I/O libraries.
+
+## 4. The Factory Pattern
+
+In python we do not use the `new` operator.
+You can just instance an object (e.g. `Foo()` instead of `new Foo()`).
+
+Brain Power page 111:
+
+- **Q:** How might you take all the parts of your application that instantiate concrete classes and separate or encapsulate them from the rest of you application?
+- **A:** We put the instantiation in the main file or create a separate class where all the instantiation takes place.
+This way we have all concrete classes in one place.
+
+Think about the `if ifelse else` creation problem in the `orderPizza()` method.
+
+A factory deals with the object creation.
+Think about the creation problem (all the `if-else` statements) of the `orderPizza()` method.
+The creation part was taken out of the method and moved to the `SimplePizzaFactory`.
+Hereby taking what we expect to change and encapsulating it.
+
+Brian Power page 116:
+
+- **Q:**    We know that object composition allows us to change behavior dynamically at runtime (among other things) because we can swap in an out implementations.
+            How might we be able to use that in PizzaStore?
+            What factory implementations might we be able to swap in and out?
+- **My A:** ...
+- **A:** We don't know about you, be we think about New York, Chicago ..... --> Apparently there are different types of pizza in the US.
+
+Simple Factory =/= The Factory Pattern.
