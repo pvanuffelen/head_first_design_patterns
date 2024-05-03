@@ -1,7 +1,8 @@
+from pizza_test_drive import PizzaTestDrive
 
 
 def main():
-    print("hello world")
+    PizzaTestDrive()
 
 
 if __name__ == "__main__":
