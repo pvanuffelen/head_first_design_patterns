@@ -4,9 +4,8 @@ from pizza import Pizza
 
 class PizzaStore(ABC):
 
-    def order_pizza(self, type: str):
-
-        pizza = create_pizza(type)
+    def order_pizza(self, type_: str):
+        pizza = self.create_pizza(type_)
 
         pizza.prepare()
         pizza.bake()
@@ -16,5 +15,5 @@ class PizzaStore(ABC):
         return pizza
 
     @abstractmethod
-    def create_pizza(self):
+    def create_pizza(self, type_: str):
         pass

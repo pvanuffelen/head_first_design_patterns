@@ -18,16 +18,13 @@ class Pizza(ABC):
         for i in self.toppings:
             print(f" {i}")
 
-    @staticmethod
-    def bake():
+    def bake(self):
         print("Bake for 25 minutes at 350 degrees Fahrenheit")
 
-    @staticmethod
-    def cut():
+    def cut(self):
         print("Cutting pizza in diagonal slices")
 
-    @staticmethod
-    def box():
+    def box(self):
         print("Place pizza in official PizzaStore box")
 
     def get_name(self):
