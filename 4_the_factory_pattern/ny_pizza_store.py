@@ -1,4 +1,5 @@
 from pizza_store import PizzaStore
+from ny_cheese_pizza import NYStyleCheesePizza
 
 
 class NYStylePizzaStore(PizzaStore):
