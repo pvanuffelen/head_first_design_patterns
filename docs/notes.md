@@ -212,3 +212,8 @@ Brian Power page 116:
 - **A:** We don't know about you, be we think about New York, Chicago ..... --> Apparently there are different types of pizza in the US.
 
 Simple Factory =/= The Factory Pattern.
+
+>A *factory method* handles object creation and encapsulates it.
+It does so by letting a subclass handle the creation.
+The code that uses the object (superclass) is called the client.
+Using a factory method, the client code is decoupled from the object creation of the subclass (client doesn't know what type of object is created!).
