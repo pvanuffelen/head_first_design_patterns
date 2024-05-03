@@ -4,11 +4,11 @@ from typing import List
 
 class Pizza(ABC):
 
-    def __init__(self, name: str, dough: str, sauce: str, toppings: List[str]):
-        self.name = name,
-        self.dough = dough
-        self.sauce = sauce
-        self.toppings = toppings
+    def __init__(self):
+        self.name = None,
+        self.dough = None
+        self.sauce = None
+        self.toppings = list()
 
     def prepare(self):
         print(f"Preparing {self.name}")
