@@ -190,6 +190,8 @@ Example the Java I/O libraries.
 In python we do not use the `new` operator.
 You can just instance an object (e.g. `Foo()` instead of `new Foo()`).
 
+### Simple Factory
+
 Brain Power page 111:
 
 - **Q:** How might you take all the parts of your application that instantiate concrete classes and separate or encapsulate them from the rest of you application?
@@ -213,7 +215,53 @@ Brian Power page 116:
 
 Simple Factory =/= The Factory Pattern.
 
+The Simple Factory uses an object (e.g. `SimplePizzaFactory`) to handle the object creation.
+
 >A *factory method* handles object creation and encapsulates it.
-It does so by letting a subclass handle the creation.
-The code that uses the object (superclass) is called the client.
-Using a factory method, the client code is decoupled from the object creation of the subclass (client doesn't know what type of object is created!).
+>It does so by letting a subclass handle the creation.
+>The code that uses the object (superclass) is called the client.
+>Using a factory method, the client code is decoupled from the object creation of the subclass (client doesn't know what type of object is created!).
+
+### The Factory Pattern
+
+I finally got to meet the factory pattern.
+It consists out of two parts: *Creator Classes* and *Product Classes*
+
+The Creator Classes consist of an abstract Creator and concrete Creators (`PizzaStore` and `NYPizzaStore`).
+Same hierarchy applies to Product Classes, so an abstract Product and concrete Product (`Pizza` and `NYStyleCheesePizza`).
+
+The abstract Creator doesn't know anything about the objects the concrete Creators create by implementing the `factoryMethod()`.
+However, the abstract Creator does have methods that perform operations on these objects (e.g. `prepare()`).
+
+The type of concrete Creator determines the concrete Product that is created (by using the factory method).
+
+**The Factory Method Pattern**: defines an interface for creating an object, but lets subclasses decide which class to instantiate.
+Factory Method lets a class defer instantiation to subclasses.
+
+### Guru and Student...
+
+Factories allow you to encapsulate the part of the code that handle object creation.
+This latter part varies a lot, thus, it is good to separate it from the rest of the code.
+
+> **Design Principle**
+>
+> Depend upon abstractions.
+> Do not depend upon concrete classes.
+
+### Invert Your Thinking
+
+Guidelines:
+
+- No variable should hold a reference to a concrete class (use factories for that).
+- No class should derive from a concrete class (derive from an abstraction e.g interface or abstract class).
+- No method should override an implemented method of any of its base classes (if you override those, the base class wasn't an abstraction)
+
+These are guidelines!
+In principle every program out there violates these (e.g. by instantiating a string).
+But with these in the back of our mind we know when we violate them and do that for a good reason.
+
+### Abstract Factories
+
+By creating an abstract factory, an interface was created for factory "family" to adhere to.
+The concrete families, who actually create products, are decoupled from this abstract factory.
+So by creating a variety of factories, we get a variety of implementations, without the client code changing.
