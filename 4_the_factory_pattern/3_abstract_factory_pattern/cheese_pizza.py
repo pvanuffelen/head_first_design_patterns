@@ -5,7 +5,7 @@ from pizza_ingredient_factory import PizzaIngredientFactory
 class CheesePizza(Pizza):
 
     def __init__(self, ingredient_factory: PizzaIngredientFactory):
-        # super.__init__()
+        super().__init__()
         self.ingredient_factory = ingredient_factory
 
     def prepare(self):
