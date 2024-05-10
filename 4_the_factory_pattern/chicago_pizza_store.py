@@ -1,5 +1,9 @@
 from pizza_store import PizzaStore
-from chicago_cheese_pizza import ChicagoStyleCheesePizza
+# from ny_pizza_ingredient_factory import NYPizzaIngredientFactory
+from cheese_pizza import CheesePizza
+from clam_pizza import ClamPizza
+from veggie_pizza import VeggiePizza
+from pepperoni_pizza import PepperoniPizza
 
 
 class ChicagoStylePizzaStore(PizzaStore):
