@@ -1,17 +1,26 @@
 from pizza_store import PizzaStore
-from ny_cheese_pizza import NYStyleCheesePizza
-
+from ny_pizza_ingredient_factory import NYPizzaIngredientFactory
+from cheese_pizza import CheesePizza
+from clam_pizza import ClamPizza
+from veggie_pizza import VeggiePizza
+from pepperoni_pizza import PepperoniPizza
 
 class NYStylePizzaStore(PizzaStore):
 
     def create_pizza(self, item: str):
+        pizza = None
+        ingredient_factory = NYPizzaIngredientFactory()
         if item == "cheese":
-            return NYStyleCheesePizza()
+            pizza = CheesePizza(ingredient_factory)
+            pizza.set_name("New York Style Cheese Pizza")
         elif item == "veggie":
-            return NYVeggieStyleCheesePizza()
+            pizza = VeggiePizza(ingredient_factory)
+            pizza.set_name("New York Style Veggie Pizza")
         elif item == "clam":
-            return NYClamStyleCheesePizza()
+            pizza = ClamPizza(ingredient_factory)
+            pizza.set_name("New York Style Clam Pizza")
         elif item == "pepperoni":
-            return NYPepperoniStyleCheesePizza()
-        else:
-            return None
+            pizza = PepperoniPizza(ingredient_factory)
+            pizza.set_name("New York Style Pepperoni Pizza")
+
+        return pizza
