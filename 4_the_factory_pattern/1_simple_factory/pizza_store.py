@@ -6,7 +6,7 @@ class PizzaStore:
     def __init__(self, factory: SimplePizzaFactory):
         self.factory = factory
 
-    def order_pizza(self, type_):
+    def order_pizza(self, type_: str):
         """Method that uses the factory to create its pizzas. No more concrete instantiations here!"""
         pizza = self.factory.create_pizza(type_)
 

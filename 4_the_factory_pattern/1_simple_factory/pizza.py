@@ -13,9 +13,7 @@ class Pizza(ABC):
         print(f"Preparing {self.name}")
         print(f"Tossing dough...")
         print(f"Adding sauce...")
-        print(f"Adding toppings:")
-        for i in self.toppings:
-            print(f" {i}")
+        print(f"Adding {self.toppings}")
 
     def bake(self):
         print("Bake for 25 minutes at 350 degrees Fahrenheit")
@@ -25,6 +23,9 @@ class Pizza(ABC):
 
     def box(self):
         print("Place pizza in official PizzaStore box")
+
+    def set_name(self, name: str):
+        self.name = name
 
     def get_name(self):
         return self.name
