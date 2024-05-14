@@ -265,5 +265,24 @@ But with these in the back of our mind we know when we violate them and do that 
 By creating an abstract factory, an interface was created for factory "family" to adhere to.
 The concrete families, who actually create products, are decoupled from this abstract factory.
 So by creating a variety of factories, we get a variety of implementations, without the client code changing.
+E.g. create the Chicago specific ingredient factory. 
+In this example, the `ChicagoPizzaStore` is the client.
 
-Some text
+**The Abstract Factory Pattern** provides an interface for creating families of related or dependent object without specifying their concrete classes.
+
+Most of the time the methods of the AbstractFactory, are a factory method (e.g `createDough()`, `createCheese()`).
+
+### Abstract Factory vs. Factory Method
+
+Both are good at decoupling applications for specific implementations.
+Abstract Factory (AF) does so by object composition and Factory Method (FM), via inheritance. 
+AF provides an abstract type for creating family of products, FM makes you extend a class and provide an implementation for a factory method.
+AF is useful when you have families of products you need to create and group them.
+FM is good at decoupling the client code from the concrete classes you need to instantiate.
+
+Both use factory methods, only in a different way.
+AF to purely create the products.
+FM also implements these in the abstract creator to use the concrete types the subclasses create.
+These subclasses decide what concrete product is instantiated.
+
+
