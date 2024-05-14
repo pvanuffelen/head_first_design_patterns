@@ -265,3 +265,5 @@ But with these in the back of our mind we know when we violate them and do that 
 By creating an abstract factory, an interface was created for factory "family" to adhere to.
 The concrete families, who actually create products, are decoupled from this abstract factory.
 So by creating a variety of factories, we get a variety of implementations, without the client code changing.
+
+Some text
