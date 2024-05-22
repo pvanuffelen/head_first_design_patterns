@@ -13,12 +13,12 @@ repos:
     rev: 24.4.2
     hooks:
     -   id: black
-        args: ["--line-length=130"]
+        args: ["--line-length=121"]
 
 -   repo: https://github.com/pycqa/flake8
     rev: ''  # pick a git hash / tag to point to
     hooks:
     -   id: flake8
         name: flake8
-        entry: flake8 --max-line-length=130 --ignore=W503,E203,E231,E126,E128,E125,E122,E131,E121
+        entry: flake8 --max-line-length=121 --ignore=W503,E203,E231,E126,E128,E125,E122,E131,E121
         types: [python]
