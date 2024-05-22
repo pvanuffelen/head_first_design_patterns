@@ -5,5 +5,5 @@ def main():
     StarbuzzCoffee()
 
 
-if __name__ == '__main()__':
+if __name__ == "__main__":
     main()

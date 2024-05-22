@@ -22,7 +22,7 @@ class WeatherData(Subject):
 
     def notify_observers(self):
         """Method that implements the notify_observers method, tells all the observer about the state
-           Because they are all Observers, we know they all implement update(), so we know how to notify them"""
+        Because they are all Observers, we know they all implement update(), so we know how to notify them"""
         for observer in self.observers:
             observer.update()
 

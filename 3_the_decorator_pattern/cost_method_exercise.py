@@ -9,7 +9,7 @@ class Beverage(ABC):
 
     @abstractmethod
     def cost(self) -> float:
-        cost_toppings = .50 * self.toppings
+        cost_toppings = 0.50 * self.toppings
         return cost_toppings
 
 
