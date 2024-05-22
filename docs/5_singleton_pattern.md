@@ -30,4 +30,6 @@ That's just as easy as accessing a global variable, but we get benefits like laz
 A problem arises when multithreading.
 Apparently you then execute the code twice, with each line being executed, which each thread taking turns.
 This gives a problem when executing the `getInstance()` method.
-So the method needs to be `synchornized`, which is a keyword in Java.
+So the method needs to be `synchronized`, which is a keyword in Java.
+
+
