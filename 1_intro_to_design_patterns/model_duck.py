@@ -2,6 +2,7 @@ from duck import Duck
 from fly_behavior import FlyNoWay
 from quack_behavior import Quack
 
+
 class ModelDuck(Duck):
     """Model duck class that begins life without a way to fly"""
 

@@ -10,7 +10,9 @@ def mini_duck_simulator():
 
     model = ModelDuck()  # create the model duck object
     model.perform_fly()  # perform the fly method of the model duck
-    model.set_fly_behavior(FlyRocketPowered())  # set a new fly behavior for the model duck during run time
+    model.set_fly_behavior(
+        FlyRocketPowered()
+    )  # set a new fly behavior for the model duck during run time
     model.perform_fly()  # perform the newly set fly behavior
 
 
@@ -18,5 +20,5 @@ def main():
     mini_duck_simulator()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

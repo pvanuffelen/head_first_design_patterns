@@ -5,9 +5,14 @@ from quack_behavior import QuackBehavior
 
 class Duck:
     """Duck class from which all other duck classes inherit from"""
+
     def __init__(self):
-        self.fly_behavior = FlyBehavior()  # declare attribute to fly behavior 'interface'
-        self.quack_behavior = QuackBehavior()  # declare attribute to quack behavior 'interface'
+        self.fly_behavior = (
+            FlyBehavior()
+        )  # declare attribute to fly behavior 'interface'
+        self.quack_behavior = (
+            QuackBehavior()
+        )  # declare attribute to quack behavior 'interface'
 
     @abstractmethod
     def display(self):
