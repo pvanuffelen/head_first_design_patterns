@@ -1,5 +1,6 @@
 from pizza import Pizza
-from ingredients import Dough, Sauce, Cheese
+from ingredients import Dough, Sauce
+
 
 class CheesePizza(Pizza):
 

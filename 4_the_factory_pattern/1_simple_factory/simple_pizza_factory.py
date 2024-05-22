@@ -1,6 +1,7 @@
 from pizza import Pizza
 from cheese_pizza import CheesePizza
 
+
 class SimplePizzaFactory:
     """Simple Pizza Factory class that has one job: Creating pizzas for clients"""
 
@@ -8,12 +9,12 @@ class SimplePizzaFactory:
         """This part is pulled out of the 'order_pizza() method"""
         pizza = Pizza
 
-        if type_=="cheese":
+        if type_ == "cheese":
             pizza = CheesePizza()
-        elif type_=="pepperoni":
+        elif type_ == "pepperoni":
             pizza = PepperoniPizza()
-        elif type_=="clam":
+        elif type_ == "clam":
             pizza = ClamPizza()
-        elif type_=="veggie":
+        elif type_ == "veggie":
             pizza = VeggiePizza()
         return pizza

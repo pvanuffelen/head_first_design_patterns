@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class Pizza(ABC):
 
     def __init__(self):
-        self.name = None,
+        self.name = (None,)
         self.dough = None
         self.sauce = None
         self.toppings = list()
