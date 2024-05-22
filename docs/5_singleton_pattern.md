@@ -32,4 +32,17 @@ Apparently you then execute the code twice, with each line being executed, which
 This gives a problem when executing the `getInstance()` method.
 So the method needs to be `synchronized`, which is a keyword in Java.
 
+## Summary
 
+Singletons are classes which ensure there is only one instance of this class at the time.
+Singletons are a great way of creating global access points in your code that you want to make sure only one instance is present in the code.
+Stuff like settings, caches, etc.
+
+You can create a Singleton using the old-fashioned way (without a Java enum) by creating a private constructor, the `getInstance()` method.
+However, this way you can run into problems when using multithreading.
+This can also be solved in four ways:
+
+1. Use a Java enum
+2. Add the `synchronize` keyword to the class, if you do NOT use the `getInstance()` often. Since Adding this keyword adds some overhead.
+3. Use eager instantiation, implement this if the creation of your Singleton class is inexpensive.
+4. Double-checked locking, reduces the overhead, but can be an overkill, and you have to ensure you are running at least Java 5. 
