@@ -3,7 +3,7 @@ from light import Light
 
 
 class LightOnCommand(Command):
-    """"""
+    """Class that implements the Command interface"""
     def __init__(self, light):
         self.light: Light = light
 
