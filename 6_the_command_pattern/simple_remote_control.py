@@ -1,7 +1,7 @@
 from command import Command
 
 
-class SimpleRemoteControl():
+class SimpleRemoteControl:
     def __init__(self):
         self.slot = None
 
