@@ -6,6 +6,7 @@ class SimpleRemoteControl:
         self.slot = None
 
     def set_command(self, command):
+
         self.slot = command
 
     def button_was_pressed(self):
