@@ -11,15 +11,19 @@ class CeilingFan:
 
     def high(self):
         self.speed = CeilingFan.HIGH
+        print(f"{self.location} ceiling fan is on high")
 
     def medium(self):
         self.speed = CeilingFan.MEDIUM
+        print(f"{self.location} ceiling fan is on medium")
 
     def low(self):
         self.speed = CeilingFan.LOW
+        print(f"{self.location} ceiling fan is on low")
 
     def off(self):
         self.speed = CeilingFan.OFF
+        print(f"{self.location} ceiling fan is off")
 
     def get_speed(self) -> int:
         return self.speed

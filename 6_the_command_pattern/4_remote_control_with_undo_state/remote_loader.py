@@ -1,25 +1,30 @@
 from remote_control_with_undo import RemoteControlWithUndo
-from light import Light
+from ceiling_fan import CeilingFan
 
-from light_on_command import LightOnCommand
-from light_off_command import LightOffCommand
+from ceiling_fan_high_command import CeilingFanHighCommand
+from ceiling_fan_medium_command import CeilingFanMediumCommand
+from ceiling_fan_off_command import CeilingFanOffCommand
 
 
 class RemoteLoader:
     remote_control = RemoteControlWithUndo()
 
-    living_room_light = Light("Living Room")
+    ceiling_fan = CeilingFan("Living Room")
 
-    living_room_light_on = LightOnCommand(living_room_light)
-    living_room_light_off = LightOffCommand(living_room_light)
+    # instance three commands
+    ceiling_fan_medium = CeilingFanMediumCommand(ceiling_fan)
+    ceiling_fan_high = CeilingFanHighCommand(ceiling_fan)
+    ceiling_fan_off = CeilingFanOffCommand(ceiling_fan)
 
-    remote_control.set_command(0, living_room_light_on, living_room_light_off)
+    # Put medium in slot 0 and high in slot 1, also load up the off command
+    remote_control.set_command(0, ceiling_fan_medium, ceiling_fan_off)
+    remote_control.set_command(1, ceiling_fan_high, ceiling_fan_off)
 
-    remote_control.on_button_was_pushed(0)
-    remote_control.off_button_was_pushed(0)
+    remote_control.on_button_was_pushed(0)  # first turn fan on medium
+    remote_control.off_button_was_pushed(0)  # then turn it off
     print(f"{remote_control.to_string()}")
-    remote_control.undo_button_was_pushed()
-    remote_control.off_button_was_pushed(0)
-    remote_control.on_button_was_pushed(0)
+    remote_control.undo_button_was_pushed()  # undo! it should go back to medium
+
+    remote_control.on_button_was_pushed(1)  # turn it on to high this time
     print(f"{remote_control.to_string()}")
-    remote_control.undo_button_was_pushed()
+    remote_control.undo_button_was_pushed()  # and, one more undo; it should go back to medium
