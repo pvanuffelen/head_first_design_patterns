@@ -1,7 +1,7 @@
 from command import Command
 
 
-class MacroCommand(Command):
+class MacroCommand(Command):  # TODO: implement this code in the remote_loader
     def __init__(self, commands):
         self.commands = commands  # take an array of commands and store them in the macro_command
 
