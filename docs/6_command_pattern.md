@@ -23,3 +23,5 @@ BRAIN POWER: How does the design of the Command Pattern support decoupling of th
 
 A: By using the ConcreteCommand as a middle-man.
 
+In the main example of this chapter, vendor can program to the `Command` interface, inorder to assign actions to a button.
+The remote only knows to use the `execute()` method, which is enough (so it is decoupled from the actual implementation).
