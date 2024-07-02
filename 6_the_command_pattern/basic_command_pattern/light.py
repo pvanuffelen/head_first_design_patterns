@@ -1,7 +1,9 @@
 class Light:
+    def __init__(self, room: str = "default"):
+        self.room = room
 
     def on(self):
-        print("Light on")
+        print(f"{self.room} light on")
 
     def off(self):
-        print("Light off")
+        print(f"{self.room} light off")
