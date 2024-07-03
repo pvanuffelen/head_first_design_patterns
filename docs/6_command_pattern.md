@@ -42,3 +42,16 @@ A web server might use such a queue to handle all the queries/requests.
 The other application that I can think of is a database.
 It uses a queue to handle queries.
 
+## Logging Requests
+
+In order for the Command Pattern to support this, we need two more methods: `store()` and `load()`.
+
+As we execute commands, we store a history of them on  disk.
+When a crash occurs, we reload the command objects and invoke their `execute()` methods in batch and in order.
+
+This type of logging doesn't make sense for remote control, but for applications that perform actions on large data structures.
+E.g. spreadsheets application.
+We do not want to store a copy of the data everytime a change occurs.
+
+In advanced applications, these techniques are applied to sets of operations in a transactional manner, so that all of the operations complete or none of them do.
+
