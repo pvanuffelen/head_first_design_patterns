@@ -11,9 +11,11 @@ You don't instance a Singleton object, you use its `getInstance()` method.
 
 Main example is Choc-O-Holic's ChocolateBoiler.
 
-Brain Power: How might things go wrong if more than one instance of CholoclateBoiler is created in an application?
+BRAIN POWER:
+How might things go wrong if more than one instance of `CholoclateBoiler` is created in an application?
 
-A: One might be empty, another might be full and will try of fill up a physically full tank.
+A:
+One might be empty, another might be full and will try of fill up a physically full tank.
 The same holds for boiling etc.
 
 > **The Singleton Pattern** ensures a class has only one instance, and provides a global point of access to it.
