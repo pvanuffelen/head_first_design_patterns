@@ -1,30 +1,56 @@
 from remote_control_with_undo import RemoteControlWithUndo
-from ceiling_fan import CeilingFan
+from light import Light
+from tv import TV
+from stereo import Stereo
+from hottub import Hottub
 
-from ceiling_fan_high_command import CeilingFanHighCommand
-from ceiling_fan_medium_command import CeilingFanMediumCommand
-from ceiling_fan_off_command import CeilingFanOffCommand
+from light_on_command import LightOnCommand
+from light_off_command import LightOffCommand
+from tv_on_command import TVOnCommand
+from tv_off_command import TVOffCommand
+from stereo_on_command import StereoOnCommand
+from stereo_off_command import StereoOffCommand
+from hottub_on_command import HottubOnCommand
+from hottub_off_command import HottubOffCommand
+
+from macro_command import MacroCommand
 
 
 class RemoteLoader:
     remote_control = RemoteControlWithUndo()
 
-    ceiling_fan = CeilingFan("Living Room")
+    # create all devices
+    light = Light("Living Room")
+    tv = TV("Living Room")
+    stereo = Stereo("Living Room")
+    hottub = Hottub()
 
-    # instance three commands
-    ceiling_fan_medium = CeilingFanMediumCommand(ceiling_fan)
-    ceiling_fan_high = CeilingFanHighCommand(ceiling_fan)
-    ceiling_fan_off = CeilingFanOffCommand(ceiling_fan)
+    # create on commands
+    light_on_command = LightOnCommand(light)
+    stereo_on_command = StereoOnCommand(stereo)
+    tv_on_command = TVOnCommand(tv)
+    hottub_on_command = HottubOnCommand(hottub)
 
-    # Put medium in slot 0 and high in slot 1, also load up the off command
-    remote_control.set_command(0, ceiling_fan_medium, ceiling_fan_off)
-    remote_control.set_command(1, ceiling_fan_high, ceiling_fan_off)
+    # create off commands
+    light_off_command = LightOffCommand(light)
+    stereo_off_command = StereoOffCommand(stereo)
+    tv_off_command = TVOffCommand(tv)
+    hottub_off_command = HottubOffCommand(hottub)
 
-    remote_control.on_button_was_pushed(0)  # first turn fan on medium
-    remote_control.off_button_was_pushed(0)  # then turn it off
+    # create arrays for on and off commands
+    party_on = [light_on_command, stereo_on_command, tv_on_command, hottub_on_command]
+    party_off = [light_off_command, stereo_off_command, tv_off_command, hottub_off_command]
+
+    # create macros to hold on and off commands
+    party_on_macro = MacroCommand(party_on)
+    party_off_macro = MacroCommand(party_off)
+
+    # assign macro command to a button
+    remote_control.set_command(0, party_on_macro, party_off_macro)
+
+    # push some buttons to see if works
     print(remote_control)
-    remote_control.undo_button_was_pushed()  # undo! it should go back to medium
-
-    remote_control.on_button_was_pushed(1)  # turn it on to high this time
-    print(remote_control)
-    remote_control.undo_button_was_pushed()  # and, one more undo; it should go back to medium
+    print("--- Pushing Macro On ---")
+    remote_control.on_button_was_pushed(0)
+    print("--- Pushing Macro Off ---")
+    remote_control.off_button_was_pushed(0)
