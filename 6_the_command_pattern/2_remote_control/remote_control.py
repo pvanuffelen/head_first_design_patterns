@@ -1,6 +1,7 @@
 from command import Command
 from no_command import NoCommand
 
+
 class RemoteControl:
 
     def __init__(self):
@@ -20,7 +21,7 @@ class RemoteControl:
     def off_button_was_pushed(self, slot: int):
         self.off_commands[slot].execute()
 
-    def to_string(self) -> str:
+    def __str__(self) -> str:
         my_list = [f"\n------ Remote Control -------\n"]
         for i in range(len(self.on_commands)):
             my_list.append(f"[slot {i}] {self.on_commands[i].__class__.__name__}   {self.off_commands[i].__class__.__name__}\n")

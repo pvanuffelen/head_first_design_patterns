@@ -34,7 +34,7 @@ class RemoteLoader:
     remote_control.set_command(1, kitchen_light_on, kitchen_light_off)
     remote_control.set_command(2, stereo_on_with_cd, stereo_off)
 
-    print(f"{remote_control.to_string()}")
+    print(remote_control)  # use the __str__ function to print the slots
 
     remote_control.on_button_was_pushed(0)
     remote_control.off_button_was_pushed(0)
