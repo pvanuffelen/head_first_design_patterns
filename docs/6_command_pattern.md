@@ -25,3 +25,20 @@ A: By using the ConcreteCommand as a middle-man.
 
 In the main example of this chapter, vendor can program to the `Command` interface, inorder to assign actions to a button.
 The remote only knows to use the `execute()` method, which is enough (so it is decoupled from the actual implementation).
+
+## Queuing Requests
+
+The Command Pattern can be used to handle queuing requests.
+Units of work/computation are packaged as commands.
+These are added to the queue and executed by (a) thread(s). 
+This way, the job queue class is totally decoupled from the class doing the computations.
+
+BRAIN POWER: 
+How might a web server make use of such a queue? 
+What other applications can you think of?
+
+A: 
+A web server might use such a queue to handle all the queries/requests.
+The other application that I can think of is a database.
+It uses a queue to handle queries.
+
