@@ -26,7 +26,7 @@ class RemoteControlWithUndo:
     def undo_button_was_pushed(self):
         self.undo_command.undo()
 
-    def to_string(self) -> str:
+    def __str__(self):
         """
         Function that mimics the toString method of java
         In the example in the book, a StringBuffer is used, which I mimic using a list and the .join() func

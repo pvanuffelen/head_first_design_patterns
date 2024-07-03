@@ -22,9 +22,9 @@ class RemoteLoader:
 
     remote_control.on_button_was_pushed(0)  # first turn fan on medium
     remote_control.off_button_was_pushed(0)  # then turn it off
-    print(f"{remote_control.to_string()}")
+    print(remote_control)
     remote_control.undo_button_was_pushed()  # undo! it should go back to medium
 
     remote_control.on_button_was_pushed(1)  # turn it on to high this time
-    print(f"{remote_control.to_string()}")
+    print(remote_control)
     remote_control.undo_button_was_pushed()  # and, one more undo; it should go back to medium

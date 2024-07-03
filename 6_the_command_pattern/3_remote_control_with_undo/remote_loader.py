@@ -17,9 +17,9 @@ class RemoteLoader:
 
     remote_control.on_button_was_pushed(0)
     remote_control.off_button_was_pushed(0)
-    print(f"{remote_control.to_string()}")
+    print(remote_control)
     remote_control.undo_button_was_pushed()
     remote_control.off_button_was_pushed(0)
     remote_control.on_button_was_pushed(0)
-    print(f"{remote_control.to_string()}")
+    print(remote_control)
     remote_control.undo_button_was_pushed()
